@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { routes } from './app.routes';
+import { FullCalendarModule } from '@fullcalendar/angular'; // Importe FullCalendarModule
 
+
+// Import de NgChartsModule
+import { BaseChartDirective, provideCharts, withDefaultRegisterables } from 'ng2-charts';
+import { MockDataService } from './mock-data.service';
+// Importation des composants
 @NgModule({
-  declarations: [
-   
-  ],
+  declarations: [ ],
   imports: [
+    FullCalendarModule,
     BrowserModule,
-    RouterModule.forRoot(routes)
+    BaseChartDirective,  // Assure-toi que NgChartsModule est bien importé ici
   ],
-  providers: [],
+  providers: [provideCharts(withDefaultRegisterables()), MockDataService],
   bootstrap: []
 })
 export class AppModule { }

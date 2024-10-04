@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+background-color: #df8022;
+}
+header {
+    background-color: whitesmoke;
+}
+footer{
+    background: whitesmoke
+}

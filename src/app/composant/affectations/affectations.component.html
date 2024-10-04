@@ -1,0 +1,19 @@
+<div class="mt-5 pt-5 container "><h2>Affectations des Tuteurs</h2></div>
+<div class="container mt-5">
+<table>
+  <thead>
+    <tr>
+      <th>Tuteur</th>
+      <th>Groupe</th>
+      <th>Module</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let affectation of affectations">
+      <td>{{ affectation.tuteur }}</td>
+      <td>{{ affectation.groupe }}</td>
+      <td>{{ affectation.module }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

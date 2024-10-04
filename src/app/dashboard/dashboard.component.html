@@ -1,29 +1,59 @@
-<div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Dashboard</h1>
-        <p class="lead">Bienvenue sur la plateforme de gestion des tutorats.</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Tuteurs</h5>
-            <p class="card-text">Voir la liste des tuteurs.</p>
-            <a href="/tuteurs" class="btn btn-primary">Accéder</a>
+
+<header>
+  <nav class="nav nav-pills nav-fill">
+    <a class="nav-link active" aria-current="page" href="/dashboard">Tableau de bord</a>
+    <a class="nav-link" href="/seances">Calendrier des séances</a>
+    <a class="nav-link" href="/formulaire">Formulaire de validation des séances</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Deconnexion</a>
+  </nav>
+</header>
+<body>
+  <section class="mt-5 pt-5 ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12  mt-5">
+            <h1>Dashboard</h1>
+            <p class="lead">Bienvenue sur la plateforme de gestion des tutorats.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mt-5">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Affectations des tuteurs</h5>
+                <p class="card-text">Visualiser les tuteurs affectés au groupe.</p>
+                <a href="/affectations" class="btn btn-primary">Accéder</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-5">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Séances à valider</h5>
+                <p class="card-text">Liste des séances qui doivent être validées.</p>
+                <a href="/validation-seances" class="btn btn-primary">Accéder</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-5">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Statistiques</h5>
+                <p class="card-text">visualiser les heures de tutorat effectuées.</p>
+                <a href="/statistiques" class="btn btn-primary">Accéder</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Séances</h5>
-            <p class="card-text">Gérer les séances de tutorat.</p>
-            <a href="/seances" class="btn btn-primary">Accéder</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>
+</body>
   
+<footer>
+
+      <div class="container-fluid">
+        <span class="navbar-text">
+          Copyright by G5 - all right reserved
+        </span>
+      </div>
+</footer>

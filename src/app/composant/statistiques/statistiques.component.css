@@ -2,7 +2,10 @@
     text-align: center; /* Centrer le texte */
   }
   
-
+  canvas {
+    max-width: 100%; /* Rendre le graphique responsive */
+    height: auto; /* Garder la hauteur proportionnelle */
+  }
   footer {
     background-color: #333;
     color: #fff;
@@ -11,7 +14,7 @@
     position: fixed;
     width: 100%;
     bottom: 0;
-    z-index: 10; /* Ajuste si nécessaire */
+    z-index: 50; /* Ajuste si nécessaire */
   }
   button {
     background-color: #007bff;
@@ -57,3 +60,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
+  
+
+  main {
+    flex: 1; /* Prend l'espace disponible avant le footer */
+  }
