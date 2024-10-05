@@ -6,30 +6,47 @@
       <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Deconnexion</a>
     </nav>
   </header>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12  mt-5">
-          <h1>Formulaire de validation des séances</h1>
-          <p class="lead">Bienvenue sur la plateforme de gestion des tutorats.</p>
+  <div class="container mt-5 pt-5">
+    <h2>Validation des séances de tutorat</h2>
+    <form (ngSubmit)="onSubmit()" #validationForm="ngForm">
+      
+      <!-- Sélection de la séance -->
+      <div class="mb-3">
+        <label for="seance" class="form-label">Sélectionner une séance</label>
+        <select class="form-select" id="seance" required [(ngModel)]="selectedSeance" name="seance">
+          <option *ngFor="let seance of seances" [value]="seance.id">{{ seance.title }} - {{ seance.date }}</option>
+        </select>
+      </div>
+  
+      <!-- Statut de la séance -->
+      <div class="mb-3">
+        <label for="status" class="form-label">Statut de la séance</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="status" id="effectuee" value="effectuee" required [(ngModel)]="seanceStatus">
+          <label class="form-check-label" for="effectuee">Effectuée</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="status" id="nonEffectuee" value="nonEffectuee" required [(ngModel)]="seanceStatus">
+          <label class="form-check-label" for="nonEffectuee">Non effectuée</label>
         </div>
       </div>
-      <div class="row">
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Marquer une séance</option>
-            <option value="1">effectué</option>
-            <option value="2">non effectué</option>
-          </select>
+  
+      <!-- Commentaires -->
+      <div class="mb-3">
+        <label for="commentaires" class="form-label">Commentaires (facultatif)</label>
+        <textarea class="form-control" id="commentaires" rows="3" [(ngModel)]="commentaires" name="commentaires"></textarea>
       </div>
+  
+      <!-- Bouton de soumission -->
+      <button type="submit" class="btn btn-primary">Valider la séance</button>
+    </form>
+  </div>
+  
+  <footer>
+
+    <div class="container-fluid">
+      <span class="navbar-text">
+        Copyright by G5 - all right reserved
+      </span>
     </div>
-  </body>
-    
-    <footer>
-      <nav class="navbar navbar-light pt-5 mt-5">
-        <div class="container-fluid">
-          <span class="navbar-text">
-            Copyright by G5 - all right reserved
-          </span>
-        </div>
-      </nav>
-  </footer>
+</footer>
