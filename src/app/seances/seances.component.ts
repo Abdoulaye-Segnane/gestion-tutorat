@@ -4,6 +4,9 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import bootstrap from '../../main.server';
 import { FormsModule } from '@angular/forms'; // Importer FormsModule
 import { Modal } from 'bootstrap';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID, Inject } from '@angular/core';
+
 
 @Component({
   selector: 'app-seances',
@@ -15,16 +18,14 @@ import { Modal } from 'bootstrap';
 
 
 export class SeancesComponent implements OnInit {
+openPlanningModal() {
+throw new Error('Method not implemented.');
+}
   
 onSubmit() {
  // Traiter le formulaire ici
  console.log('Séance planifiée:', this.titreSeance, this.dateSeance, this.heureSeance);
     
- // Fermer le modal après le plan
- const modalElement = document.getElementById('planifierSeanceModal');
- const modal = Modal.getInstance(modalElement);
- modal?.hide();
-
  // Réinitialiser le formulaire
  this.titreSeance = '';
  this.dateSeance = '';
@@ -52,12 +53,18 @@ heureSeance: string = '';
     // Ici, tu pourrais ouvrir un modal pour afficher plus de détails
   }
 
+  /* constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
   openPlanningModal() {
-    // Utilisation de jQuery pour ouvrir le modal
     const modalElement = document.getElementById('planifierSeanceModal');
-    const modal = new Modal(modalElement);
-    modal.show();
-  }
+    if (modalElement) {
+      const modal = new bootstrap.Modal(modalElement); // Crée une instance de Modal
+      modal.show(); // Montre le modal
+    } else {
+      console.error('L\'élément modal n\'a pas été trouvé.');
+    }
+  }*/
+  
 
 
   ngOnInit(): void {
